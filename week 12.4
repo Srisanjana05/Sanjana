@@ -1,0 +1,16 @@
+book_genres = {}
+try:
+    while True:
+        line = input().strip()
+        if not line:
+            break
+        book_title, genre = map(str.strip, line.split(','))
+        if genre in book_genres:
+            book_genres[genre].append(book_title)
+        else:
+            book_genres[genre] = [book_title]
+
+except EOFError:
+    pass
+for genre, books in book_genres.items():
+    print(f"{genre}: {', '.join(books)}")
