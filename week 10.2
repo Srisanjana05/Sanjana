@@ -1,0 +1,4 @@
+n = int(input())
+arr = list(map(int, input().split()))
+k = int(input())
+print("Yes" if any(k - x in arr[:i] + arr[i+1:] for i, x in enumerate(arr)) else "No")
