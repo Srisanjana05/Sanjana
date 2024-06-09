@@ -1,0 +1,13 @@
+def productDigits(n):
+    digits = [int(d) for d in str(n)]
+    product_even = 1
+    sum_odd = 0
+    
+    for i, digit in enumerate(digits):
+        if (i + 1) % 2 == 0:  # 1-based even positions
+            product_even *= digit
+        else:  # 1-based odd positions
+            sum_odd += digit
+            
+    
+    return product_even % sum_odd == 0 if sum_odd != 0 else False
