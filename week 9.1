@@ -1,0 +1,8 @@
+def automorphic(n):
+    if n < 0:
+        return "Invalid input"
+    square = n * n
+    if str(square).endswith(str(n)):
+        return "Automorphic"
+    else:
+        return "Not Automorphic"
